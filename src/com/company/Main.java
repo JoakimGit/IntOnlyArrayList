@@ -4,47 +4,35 @@ public class Main {
 
     public static void main(String[] args) {
 
-        IntOnlyArrayList il = new IntOnlyArrayList();
-        il.add(5);
-        il.add(10);
-        il.add(32);
-        il.add(8);
-        il.add(55);
-        il.add(42);
-        il.add(89);
-        il.add(3);
-        il.add(0);
+        IntOnlyArrayList myArrayList = new IntOnlyArrayList();
+        myArrayList.add(5);
+        myArrayList.add(10);
+        myArrayList.add(32);
+        myArrayList.add(8);
+        myArrayList.add(55);
+        myArrayList.add(42);
+        myArrayList.add(89);
 
-        System.out.println(il.get(1));
-        System.out.println(il.size());
-        print(il);
-        System.out.println(il.get(6));
-        il.remove(6);
-        System.out.println(il.size());
-        print(il);
-        System.out.println(il.get(6));
-        il.clear();
-        print(il);
-    }
+        IntOnlyArrayList myArrayList2 = new IntOnlyArrayList();
+        myArrayList2.add(-3);
+        myArrayList2.add(-13);
+        myArrayList2.add(-22);
+        myArrayList2.add(-105);
+        myArrayList2.add(-8);
 
-    private static void print(IntOnlyArrayList list){
-        //udskrift som ArrayList - kan laves som toString i IntOnlyArrayList
-        String s;
-        //er listen tom skrives kun kantede parenteser
-        if (list.size()==0){
-            s = "[]";
-        }
-        else {
-            //sæt først begyndelsesparentes og første tal (stakitproblemet)
-            s = "[" + list.get(0);
-            for (int i=1; i<list.size(); i++){
-                //sæt komma og næste tal, så længe der er flere tal
-                s += ", " + list.get(i);
-            }
-            //afslut med at sætte højre parentes
-            s += "]";
-        }
-        //udskriv - kunne blive til return s i toString
-        System.out.println(s);
+        System.out.println(myArrayList);;
+        System.out.println(myArrayList2);;
+
+        myArrayList.addAll(myArrayList2);
+        System.out.println(myArrayList);
+
+        System.out.println("The arraylist contains the number -22: " + myArrayList.contains(-22));
+        System.out.println("The index of value 89 is: " + myArrayList.indexOf(89));
+        System.out.println("The value of index 11 is: " + myArrayList.get(10));
+        System.out.println("The size of the arraylist is: " + myArrayList.size());
+        myArrayList.remove(6);
+        System.out.println("The size of the arraylist after removing index 6 is: " + myArrayList.size());
+        myArrayList.clear();
+        System.out.println("The arraylist after clearing: " + myArrayList);
     }
 }
