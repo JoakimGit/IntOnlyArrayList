@@ -28,10 +28,14 @@ public class Main {
 
         System.out.println("The arraylist contains the number -22: " + myArrayList.contains(-22));
         System.out.println("The index of value 89 is: " + myArrayList.indexOf(89));
-        System.out.println("The value of index 11 is: " + myArrayList.get(10));
+
+        myArrayList.add(11, 999);
+        System.out.println("The value of index 11 is: " + myArrayList.get(11));
+
         System.out.println("The size of the arraylist is: " + myArrayList.size());
         myArrayList.remove(6);
-        System.out.println("The size of the arraylist after removing index 6 is: " + myArrayList.size());
+        System.out.println("The size of the after removal: " + myArrayList.size());
+
         myArrayList.clear();
         System.out.println("The arraylist after clearing: " + myArrayList);
     }

@@ -17,6 +17,18 @@ public class IntOnlyArrayList {
         list = tempList;
     }
 
+    public void add(int index, int value){
+        // Make a copy of the array up to the index.
+        int[] tempList = Arrays.copyOfRange(list, 0, index);
+        // Take that copy of the first half, and add the new value to the end of it
+        tempList = Arrays.copyOf(tempList, tempList.length + 1);
+        tempList[tempList.length - 1] = value;
+        // Copy the second half of the array and add them together.
+        int[] tempList2 = Arrays.copyOfRange(list, index, list.length);
+        list = Arrays.copyOf(tempList, tempList.length + tempList2.length);
+        System.arraycopy(tempList2, 0, list, tempList.length, tempList2.length);
+    }
+
     public void addAll(IntOnlyArrayList otherobject){
         // Make existing array large enough to accommodate 2nd array and then copy it over into it.
         int[] otherList = otherobject.getList();
